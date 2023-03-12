@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 85%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  background-color: #f69517;
+  color: #fff;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 1rem 2.5rem 2rem;
+}
+.header h1 {
+  font-size: 2.25rem;
+  margin-bottom: 1rem;
+}
+.d-flex {
+  display: flex;
+  gap: 1rem;
+}
+.d-flex :where(input, button) {
+  border: none;
+  outline: 0;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+input {
+  width: 75%;
+}
+button {
+  width: 25%;
+  background-color: #d9d9d9;
+  color: #555;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  background-color: #bbb;
+}
+
+.task-list {
+  max-height: 300px;
+  overflow-y: auto;
+  list-style-type: none;
+  background-color: #eee;
+}
+.task-list li {
+  width: 100%;
+  padding: 0.5rem 3rem 0.5rem 2.7rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease-in-out, padding-left 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.task-list li:hover {
+  background-color: rgb(205, 204, 204);
+  padding-left: 3rem;
+}
+.task-list li img {
+  width: 22px;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+  display: block;
+}
+
+.task-list li img:hover {
+  transform: scale(1.1);
+}
+.task-list li:hover img {
+  opacity: 1;
+}
+
+.done {
+  color: #fff;
+  background-color: #888;
+  text-decoration: line-through;
+  position: relative;
+}
+.done::after {
+  content: "";
+  width: 7px;
+  height: 17px;
+  background-color: transparent;
+  position: absolute;
+  left: 23px;
+  top: 50%;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  transform: translateY(-65%) rotate(45deg);
+}
